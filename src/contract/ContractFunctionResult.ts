@@ -3,6 +3,7 @@ import * as pb from "../generated/ContractCallLocal_pb";
 import { ContractId } from "./ContractId";
 import BigNumber from "bignumber.js";
 import { encodeHex } from "../crypto/util";
+import { UndefinedArgumentError } from '../errors/UndefinedArgumentError';
 
 /**
  * The result returned by a call to a smart contract function. This is part of the response to
@@ -66,6 +67,10 @@ export class ContractFunctionResult {
     }
 
     public getString(index: number): string {
+        if (index == null) {
+            throw new UndefinedArgumentError();
+        }
+
         return Buffer.from(this.getBytes(index)).toString("utf-8");
     }
 
