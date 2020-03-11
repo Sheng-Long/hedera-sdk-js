@@ -1,0 +1,4 @@
+recursive: true
+reporter: nyan
+file: "./test/support/index"
+spec: ./test/unit/*.test.ts
