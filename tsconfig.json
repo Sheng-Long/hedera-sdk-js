@@ -1,21 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./lib/",
-    "module": "commonjs",
-    "target": "es6",
+    "outDir": "./test/wpfiles",
+    "module": "es6",
+    "target": "es5",
     "sourceMap": true,
     "strict": true,
     "declaration": true,
+    "downlevelIteration": true,
     "types": [
         "node"
-    ]
-  },
-  "include": [
-    "src/index-web.ts",
-    "src/index-node.ts",
-    "__tests__"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    ],
+    "allowJs": true
+  }
 }

@@ -36,7 +36,7 @@
     "test:unit": "jest --config jest.config.js",
     "test:e2e": "jest --config jest.e2e.config.js --forceExit",
     "test": "mocha -R nyan",
-    "test:browser": "live-server --port=9000 --mount=/:test",
+    "test:build": "webpack --module-bind 'mocha-loader!./test'",
     "prepare": "gulp build",
     "docs": "typedoc --excludeNotExported --excludePrivate --excludeProtected --excludeExternals --out docs src",
     "prepublishOnly": "gulp generate:flow",
@@ -64,11 +64,10 @@
     "grpc": "^1.24.2",
     "js-sha3": "^0.8.0",
     "mocha": "^7.1.0",
+    "mocha-loader": "^4.0.1",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
-    "tweetnacl": "^1.0.3",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "tweetnacl": "^1.0.3"
   },
   "devDependencies": {
     "@launchbadge/eslint-config": "^0.13.10",
@@ -85,6 +84,8 @@
     "ts-jest": "^25.2.0",
     "ts-protoc-gen": "^0.12.0",
     "typedoc": "^0.16.9",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   }
 }
